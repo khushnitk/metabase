@@ -358,8 +358,8 @@
 
 (defmacro pdoseq
   "(Almost) just like `doseq` but runs in parallel. Doesn't support advanced binding forms like `:let` or `:when` and only supports a single binding </3"
-  [[binding collection] & body]
   {:style/indent 1}
+  [[binding collection] & body]
   `(dorun (pmap (fn [~binding]
                   ~@body)
                 ~collection)))
@@ -513,6 +513,7 @@
 
 (defmacro try-ignore-exceptions
   "Simple macro which wraps the given expression in a try/catch block and ignores the exception if caught."
+  {:style/indent 0}
   [& body]
   `(try ~@body (catch Throwable ~'_)))
 
