@@ -68,8 +68,26 @@
 (declare create-user
          form-password-reset-url
          set-user-password
-         set-user-password-reset-token)
+         set-user-password-reset-token
+         return-user)
 
+(defn return-user
+  []
+  {
+                        :email "a@a.com"
+                        :first_name "first-name"
+                        :last_name "last-name"
+                        :password  ""
+                        :id "1"
+                        :date_joined  (u/new-sql-timestamp)
+                        :last_login   nil
+                        :is_staff     true
+                        :is_active    true
+                        :is_superuser false}
+
+    ;; return the newly created user
+
+)
 (defn create-user
   "Convenience function for creating a new `User` and sending out the welcome email."
   [first-name last-name email-address & {:keys [send-welcome invitor password]

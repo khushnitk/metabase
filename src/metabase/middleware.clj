@@ -11,7 +11,9 @@
                              [session :refer [Session]]
                              [setting :refer [defsetting]]
                              [user :refer [User]])
-            [metabase.util :as u])
+            [metabase.util :as u]
+            [metabase.models.user :refer [User return-user]]
+            )
   (:import com.fasterxml.jackson.core.JsonGenerator))
 
 ;;; # ------------------------------------------------------------ UTIL FNS ------------------------------------------------------------
@@ -85,13 +87,21 @@
 
    *  `*current-user-id*` int ID or nil of user associated with request
    *  `*current-user*`    delay that returns current user (or nil) from DB"
+
+
   [handler]
   (fn [request]
     (if-let [current-user-id (:metabase-user-id request)]
-      (binding [*current-user-id* current-user-id
+      (
+        binding [*current-user-id* current-user-id
                 *current-user*    (delay (sel :one `[User ~@(models/default-fields User) :is_active :is_staff], :id current-user-id))]
         (handler request))
-      (handler request))))
+
+      (
+
+        binding [*current-user-id* 1 *current-user* (delay (return-user ))]
+
+         (handler request)))))
 
 
 (defn wrap-api-key

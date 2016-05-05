@@ -45,6 +45,7 @@
 (defendpoint GET "/current"
   "Fetch the current `User`."
   []
+  (println @*current-user*)
   (check-404 @*current-user*))
 
 
