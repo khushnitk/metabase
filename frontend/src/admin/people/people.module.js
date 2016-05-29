@@ -5,7 +5,7 @@ var AdminPeople = angular.module('metabase.admin.people', [
 ]);
 
 AdminPeople.config(['$routeProvider', function ($routeProvider) {
-    $routeProvider.when('/admin/people/', {
+    $routeProvider.when('/metabase/admin/people/', {
         template: '<div mb-redux-component class="flex flex-column flex-full" />',
         controller: 'PeopleList'
     });

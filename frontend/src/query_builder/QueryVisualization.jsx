@@ -152,7 +152,7 @@ export default class QueryVisualization extends Component {
                         }}>Download CSV</button>);
                 } else {
                     downloadButton = (
-                        <form ref={(c) => this._downloadCsvForm = c} method="POST" action="/api/dataset/csv">
+                        <form ref={(c) => this._downloadCsvForm = c} method="POST" action="/metabase/api/dataset/csv">
                             <input type="hidden" name="query" value="" />
                             <a className="Button Button--primary" onClick={() => {this.onDownloadCSV(); this.refs.downloadModal.toggle();}}>
                                 Download CSV
@@ -192,7 +192,7 @@ export default class QueryVisualization extends Component {
                     );
                 } else {
                     return (
-                        <form ref={(c) => this._downloadCsvForm = c} method="POST" action="/api/dataset/csv">
+                        <form ref={(c) => this._downloadCsvForm = c} method="POST" action="/metabase/api/dataset/csv">
                             <input type="hidden" name="query" value="" />
                             <a className="mx1" title="Download this data" onClick={() => this.onDownloadCSV()}>
                                 <Icon name='download' width="16px" height="16px" />
@@ -229,7 +229,7 @@ export default class QueryVisualization extends Component {
             viz = (
                 <div className="flex full layout-centered text-grey-1 flex-column">
                     <h1>If you give me some data I can show you something cool. Run a Query!</h1>
-                    { hasSampleDataset && <a className="link cursor-pointer my2" href="/q?tutorial">How do I use this thing?</a> }
+                    { hasSampleDataset && <a className="link cursor-pointer my2" href="/metabase/q?tutorial">How do I use this thing?</a> }
                 </div>
             );
         } else {

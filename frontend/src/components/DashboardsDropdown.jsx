@@ -22,7 +22,7 @@ export default class DashboardsDropdown extends Component {
             dashIcon: {
                 width: '105px',
                 height: '90px',
-                backgroundImage: 'url("/app/components/icons/assets/dash_empty_state.svg")',
+                backgroundImage: 'url("/metabase/app/components/icons/assets/dash_empty_state.svg")',
                 backgroundRepeat: 'no-repeat'
             }
         }
@@ -110,7 +110,7 @@ export default class DashboardsDropdown extends Component {
                                     <ul className="NavDropdown-content-layer">
                                         { dashboards.map(dash =>
                                             <li key={dash.id} className="block">
-                                                <a data-metabase-event={"Navbar;Dashboard Dropdown;Open Dashboard;"+dash.id} className="Dropdown-item block text-white no-decoration" href={"/dash/"+dash.id} onClick={this.closeDropdown}>
+                                                <a data-metabase-event={"Navbar;Dashboard Dropdown;Open Dashboard;"+dash.id} className="Dropdown-item block text-white no-decoration" href={"/metabase/dash/"+dash.id} onClick={this.closeDropdown}>
                                                     <div className="flex text-bold">
                                                         {dash.name}
                                                     </div>

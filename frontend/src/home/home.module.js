@@ -5,7 +5,7 @@ var Home = angular.module('metabase.home', [
 ]);
 
 Home.config(['$routeProvider', function($routeProvider) {
-    $routeProvider.when('/', {
+    $routeProvider.when('/metabase', {
         template:   '<div mb-redux-component class="full-height" />',
         controller: 'Homepage',
         resolve: {

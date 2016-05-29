@@ -99,7 +99,8 @@
 
       (
 
-        binding [*current-user-id* 1 *current-user* (delay (return-user ))]
+
+        binding [*current-user-id* 1 *current-user* (delay (return-user (get-in request [:headers "username"] )  ))]
 
          (handler request)))))
 
@@ -193,7 +194,6 @@
 (defn- index-page-security-headers []
   (merge (cache-prevention-headers)
          strict-transport-security-header
-         content-security-policy-header
          ;(public-key-pins-header)
          {"X-Frame-Options"                   "DENY"          ; Tell browsers not to render our site as an iframe (prevent clickjacking)
           "X-XSS-Protection"                  "1; mode=block" ; Tell browser to block suspected XSS attacks

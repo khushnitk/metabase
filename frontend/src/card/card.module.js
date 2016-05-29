@@ -24,30 +24,30 @@ var Card = angular.module('metabase.card', [
 ]);
 
 Card.config(['$routeProvider', function($routeProvider) {
-    $routeProvider.when('/q', {
+    $routeProvider.when('/metabase/q', {
         template: CARD_DETAIL_TEMPLATE,
         controller: 'CardDetail'
     });
-    $routeProvider.when('/card/:cardId', {
+    $routeProvider.when('/metabase/card/:cardId', {
         template: CARD_DETAIL_TEMPLATE,
         controller: 'CardDetail'
     });
 
     // redirect old urls to new ones with hashes
-    $routeProvider.when('/q/:serializedCard', {
+    $routeProvider.when('/metabase/q/:serializedCard', {
         redirectTo: function (routeParams, path, search) {
-            return "/q#"+routeParams.serializedCard;
+            return "/metabase/q#"+routeParams.serializedCard;
         }
     });
-    $routeProvider.when('/card/:cardId/:serializedCard', {
+    $routeProvider.when('/metabase/card/:cardId/:serializedCard', {
         redirectTo: function (routeParams, path, search) {
-            return "/card/"+routeParams.cardId+"#"+routeParams.serializedCard;
+            return "/metabase/card/"+routeParams.cardId+"#"+routeParams.serializedCard;
         }
     });
 
-    $routeProvider.when('/card/', {
+    $routeProvider.when('/metabase/card/', {
         redirectTo: function (routeParams, path, search) {
-            return "/questions/all";
+            return "/metabase/questions/all";
         }
     });
 }]);

@@ -33,7 +33,7 @@ class Label extends Component {
     const { hovered } = this.state
     return (
       <Link
-        to={"/questions/label/"+slug}
+        to={"/metabase/questions/label/"+slug}
         onMouseEnter={() => this.setState({ hovered: true })}
         onMouseLeave={() => this.setState({ hovered: false })}
       >

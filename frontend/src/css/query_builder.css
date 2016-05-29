@@ -253,25 +253,25 @@
 .QueryError-image--noRows {
   width: 120px;
   height: 120px;
-  background-image: url('/app/img/no_results.svg');
+  background-image: url('/metabase/app/img/no_results.svg');
 }
 
 .QueryError-image--queryError {
   width: 120px;
   height: 120px;
-  background-image: url('/app/img/no_understand.svg');
+  background-image: url('/metabase/app/img/no_understand.svg');
 }
 
 .QueryError-image--serverError {
   width: 120px;
   height: 148px;
-  background-image: url('/app/img/blown_up.svg');
+  background-image: url('/metabase/app/img/blown_up.svg');
 }
 
 .QueryError-image--timeout {
   width: 120px;
   height: 120px;
-  background-image: url('/app/img/stopwatch.svg');
+  background-image: url('/metabase/app/img/stopwatch.svg');
 }
 
 .QueryError-message {

@@ -15,8 +15,8 @@ angular
         }
     };
 
-    $routeProvider.when('/admin/datamodel/database', metadataRoute);
-    $routeProvider.when('/admin/datamodel/database/:databaseId', metadataRoute);
-    $routeProvider.when('/admin/datamodel/database/:databaseId/:mode', metadataRoute);
-    $routeProvider.when('/admin/datamodel/database/:databaseId/:mode/:tableId', metadataRoute);
+    $routeProvider.when('/metabase/admin/datamodel/database', metadataRoute);
+    $routeProvider.when('/metabase/admin/datamodel/database/:databaseId', metadataRoute);
+    $routeProvider.when('/metabase/admin/datamodel/database/:databaseId/:mode', metadataRoute);
+    $routeProvider.when('/metabase/admin/datamodel/database/:databaseId/:mode/:tableId', metadataRoute);
 }]);

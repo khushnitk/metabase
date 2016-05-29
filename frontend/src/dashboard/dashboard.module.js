@@ -11,7 +11,7 @@ var Dashboard = angular.module('metabase.dashboard', [
 ]);
 
 Dashboard.config(['$routeProvider', function ($routeProvider) {
-    $routeProvider.when('/dash/:dashId', {
+    $routeProvider.when('/metabase/dash/:dashId', {
         template: '<div mb-redux-component />',
         controller: 'Dashboard',
         reloadOnSearch: false

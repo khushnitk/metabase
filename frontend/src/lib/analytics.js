@@ -9,7 +9,7 @@ const MetabaseAnalytics = {
     trackPageView: function(url) {
         if (url) {
             // scrub query builder urls to remove serialized json queries from path
-            url = (url.lastIndexOf('/q/', 0) === 0) ? '/q/' : url;
+            url = (url.lastIndexOf('/metabase/q/', 0) === 0) ? '/metabase/q/' : url;
 
             const { tag } = MetabaseSettings.get('version');
 

@@ -10,7 +10,7 @@ export default class USStateMap extends ChoroplethMap {
     static iconName = "statemap";
 
     static defaultProps = {
-        geoJsonPath: "/app/charts/us-states.json",
+        geoJsonPath: "/metabase/app/charts/us-states.json",
         projection: d3.geo.albersUsa(),
         getRowKey: (row) => row[0].toLowerCase(),
         getRowValue: (row) => row[1] || 0,

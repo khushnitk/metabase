@@ -74,7 +74,7 @@ export default class PinMap extends Component {
             throw ("Map ERROR: unable to find specified latitude / longitude columns in source table");
         }
 
-        return '/api/tiles/' + zoom + '/' + coord.x + '/' + coord.y + '/' +
+        return '/metabase/api/tiles/' + zoom + '/' + coord.x + '/' + coord.y + '/' +
             latitude_source_table_field_id + '/' + longitude_source_table_field_id + '/' +
             latitude_dataset_col_index + '/' + longitude_dataset_col_index + '/' +
             '?query=' + encodeURIComponent(JSON.stringify(query))
@@ -113,7 +113,7 @@ export default class PinMap extends Component {
                     let marker = new google.maps.Marker({
                         position: new google.maps.LatLng(row[latColIndex], row[lonColIndex]),
                         map: map,
-                        icon: "/app/img/pin.png"
+                        icon: "/metabase/app/img/pin.png"
                     });
                     marker.addListener("click", () => {
                         let tooltipElement = document.createElement("div");

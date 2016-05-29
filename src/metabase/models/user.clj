@@ -72,18 +72,19 @@
          return-user)
 
 (defn return-user
-  []
+  [username]
   {
                         :email "a@a.com"
-                        :first_name "first-name"
-                        :last_name "last-name"
-                        :password  ""
+                        :first_name username
+                        :last_name ""
+                        :common_name  username
                         :id "1"
                         :date_joined  (u/new-sql-timestamp)
-                        :last_login   nil
+                        :last_login   "2016-04-28T06:06:07.528Z"
                         :is_staff     true
                         :is_active    true
-                        :is_superuser false}
+                        :is_superuser true
+                      :is_qbnewb false}
 
     ;; return the newly created user
 

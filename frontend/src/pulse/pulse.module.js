@@ -10,7 +10,7 @@ const reducer = combineReducers(reducers);
 var Pulse = angular.module('metabase.pulse', []);
 
 Pulse.config(['$routeProvider', function ($routeProvider) {
-    $routeProvider.when('/pulse/', {
+    $routeProvider.when('/metabase/pulse/', {
         template: '<div mb-redux-component />',
         controller: ['$scope', '$location', '$route', '$routeParams', 'AppState',
             function($scope, $location, $route, $routeParams, AppState) {
@@ -32,7 +32,7 @@ Pulse.config(['$routeProvider', function ($routeProvider) {
         }
     });
 
-    $routeProvider.when('/pulse/create', {
+    $routeProvider.when('/metabase/pulse/create', {
         template: '<div mb-redux-component class="flex flex-column flex-full" />',
         controller: ['$scope', '$location', '$route', '$routeParams', 'AppState',
             function($scope, $location, $route, $routeParams, AppState) {
@@ -53,7 +53,7 @@ Pulse.config(['$routeProvider', function ($routeProvider) {
         }
     });
 
-    $routeProvider.when('/pulse/:pulseId', {
+    $routeProvider.when('/metabase/pulse/:pulseId', {
         template: '<div mb-redux-component class="flex flex-column flex-full" />',
         controller: ['$scope', '$location', '$route', '$routeParams', 'AppState',
             function($scope, $location, $route, $routeParams, AppState) {

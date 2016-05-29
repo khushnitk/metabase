@@ -175,7 +175,7 @@ export var ICON_PATHS = {
         attrs: { viewBox: '0 0 13 21' }
     },
     "slack": {
-        img: "/app/img/slack.png"
+        img: "/metabase/app/img/slack.png"
     }
 };
 

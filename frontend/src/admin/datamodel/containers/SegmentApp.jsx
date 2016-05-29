@@ -38,7 +38,7 @@ export default class SegmentApp extends Component {
             MetabaseAnalytics.trackEvent("Data Model", "Segment Created");
         }
 
-        this.onLocationChange("/admin/datamodel/database/" + tableMetadata.db_id + "/table/" + tableMetadata.id);
+        this.onLocationChange("/metabase/admin/datamodel/database/" + tableMetadata.db_id + "/table/" + tableMetadata.id);
     }
 
     render() {

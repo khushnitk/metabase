@@ -642,7 +642,7 @@ export let CardRenderer = {
 
         let chartRenderer = new GeoHeatmapChartRenderer(element, card, data)
             .setData(chartData, 'stateCode', 'value')
-            .setJson('/app/charts/us-states.json', d => d.properties.name)
+            .setJson('/metabase/app/charts/us-states.json', d => d.properties.name)
             .setProjection(d3.geo.albersUsa())
             .customize(chart => {
                 applyChartTooltips(chart, (hovered) => {
@@ -676,7 +676,7 @@ export let CardRenderer = {
 
         let chartRenderer = new GeoHeatmapChartRenderer(element, card, data)
             .setData(chartData, 'code', 'value')
-            .setJson('/app/charts/world.json', d => d.properties.ISO_A2) // 2-letter country code
+            .setJson('/metabase/app/charts/world.json', d => d.properties.ISO_A2) // 2-letter country code
             .setProjection(d3.geo.mercator())
             .customize(chart => {
                 applyChartTooltips(chart, (hovered) => {

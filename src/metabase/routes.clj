@@ -19,11 +19,11 @@
 
 ;; Redirect naughty users who try to visit a page other than setup if setup is not yet complete
 (defroutes ^{:doc "Top-level ring routes for Metabase."} routes
-  (GET "/" [] index)                                     ; ^/$           -> index.html
+  (GET "/metabase" [] index)                                     ; ^/$           -> index.html
   (GET "/favicon.ico" [] (resp/resource-response "frontend_client/favicon.ico"))
-  (context "/api" [] api/routes)                         ; ^/api/        -> API routes
-  (context "/app" []
+  (context "/metabase/api" [] api/routes)                         ; ^/api/        -> API routes
+  (context "/metabase/app" []
     (route/resources "/" {:root "frontend_client/app"})  ; ^/app/        -> static files under frontend_client/app
     (route/not-found {:status 404                        ; return 404 for anything else starting with ^/app/ that doesn't exist
                       :body "Not found."}))
-  (GET "*" [] index))                                    ; Anything else (e.g. /user/edit_current) should serve up index.html; Angular app will handle the rest
+  (GET "/metabase/*" [] index))                                    ; Anything else (e.g. /user/edit_current) should serve up index.html; Angular app will handle the rest

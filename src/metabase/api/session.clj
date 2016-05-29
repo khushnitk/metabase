@@ -76,7 +76,7 @@
   ;; Don't leak whether the account doesn't exist, just pretend everything is ok
   (when-let [user-id (sel :one :id User :email email)]
     (let [reset-token        (set-user-password-reset-token user-id)
-          password-reset-url (str (@(ns-resolve 'metabase.core 'site-url) request) "/auth/reset_password/" reset-token)]
+          password-reset-url (str (@(ns-resolve 'metabase.core 'site-url) request) "/metabase/auth/reset_password/" reset-token)]
       (email/send-password-reset-email email server-name password-reset-url)
       (log/info password-reset-url))))
 

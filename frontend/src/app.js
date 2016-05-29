@@ -118,39 +118,39 @@ Metabase.config(['$routeProvider', '$locationProvider', function($routeProvider,
         }
     };
 
-    $routeProvider.when('/questions', route);
-    $routeProvider.when('/questions/edit/:section', route);
-    $routeProvider.when('/questions/:section', route);
-    $routeProvider.when('/questions/:section/:slug', route);
+    $routeProvider.when('/metabase/questions', route);
+    $routeProvider.when('/metabase/questions/edit/:section', route);
+    $routeProvider.when('/metabase/questions/:section', route);
+    $routeProvider.when('/metabase/questions/:section/:slug', route);
 
-    $routeProvider.when('/admin/datamodel/metric', route);
-    $routeProvider.when('/admin/datamodel/metric/:segmentId', route);
+    $routeProvider.when('/metabase/admin/datamodel/metric', route);
+    $routeProvider.when('/metabase/admin/datamodel/metric/:segmentId', route);
 
-    $routeProvider.when('/admin/datamodel/segment', route);
-    $routeProvider.when('/admin/datamodel/segment/:segmentId', route);
+    $routeProvider.when('/metabase/admin/datamodel/segment', route);
+    $routeProvider.when('/metabase/admin/datamodel/segment/:segmentId', route);
 
-    $routeProvider.when('/admin/datamodel/:objectType/:objectId/revisions', route);
+    $routeProvider.when('/metabase/admin/datamodel/:objectType/:objectId/revisions', route);
 
-    $routeProvider.when('/unauthorized/', {
-        templateUrl: '/app/unauthorized.html',
+    $routeProvider.when('/metabase/unauthorized/', {
+        templateUrl: '/metabase/unauthorized.html',
         controller: 'Unauthorized'
     });
 
-    $routeProvider.when('/auth/', {
+    $routeProvider.when('/metabase/auth/', {
         redirectTo: function(routeParams, path, search) {
-            return '/auth/login';
+            return '/metabase/auth/login';
         }
     });
 
-    $routeProvider.when('/admin/', {
+    $routeProvider.when('/metabase/admin/', {
         redirectTo: function(routeParams, path, search) {
-            return '/admin/settings';
+            return '/metabase/admin/settings';
         }
     });
 
     // TODO: we need an appropriate homepage or something to show in this situation
     $routeProvider.otherwise({
-        templateUrl: '/app/not_found.html',
+        templateUrl: '/metabase/app/not_found.html',
         controller: 'NotFound'
     });
 }]);

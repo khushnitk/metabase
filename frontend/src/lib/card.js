@@ -50,9 +50,9 @@ export function b64url_to_utf8(b64url) {
 export function urlForCardState(state, dirty) {
     var url;
     if (state.cardId) {
-        url = "/card/" + state.cardId;
+        url = "/metabase/card/" + state.cardId;
     } else {
-        url = "/q";
+        url = "/metabase/q";
     }
     if (state.serializedCard && (!state.cardId || dirty)) {
         url += "#" + state.serializedCard;

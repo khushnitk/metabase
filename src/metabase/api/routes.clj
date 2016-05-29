@@ -45,7 +45,7 @@
                                 {:status 503 :body {:status "initializing" :progress ((resolve 'metabase.core/initialization-progress))}}))
   (context "/label"        []  label/routes)
   (context "/metric"       []  metric/routes)
-  (context "/notify"       [] (+apikey notify/routes))
+  (context "/notify"       []  notify/routes)
   (context "/pulse"        []  pulse/routes)
   (context "/revision"     []  revision/routes)
   (context "/segment"      []  segment/routes)
